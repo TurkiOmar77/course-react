@@ -8,17 +8,22 @@ const Home = () => {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'turki', id: 3 }
       ]);
 
+      const [name,setName] = useState("turki")
+
       const handleDelete = (id)=>{
         const newBlogs = blogs.filter(blog => blog.id !== id);
         setBlogs(newBlogs);
       }
       useEffect(()=>{
         console.log("useEffect !")
-    });
+        console.log(name);
+    },[name]);
     return ( 
         <div className="home">
             <BlogsList blogs={blogs} title='All Blogs' handleDelete={handleDelete} />
-            <BlogsList blogs={blogs.filter((blog)=>blog.author === 'turki')} title='turki Blogs' handleDelete={handleDelete} />
+            <button onClick={()=> setName("ali")}>change name </button>
+            <p>{name}</p>
+
         </div>
      );
 }
