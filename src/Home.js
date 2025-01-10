@@ -6,7 +6,7 @@ const Home = () => {
         <div className="home">
           {error && <div>{error}</div>}
             {isPinding && <div>Loding ...</div>}
-            {blogs && <BlogsList blogs={blogs} title='All Blogs' />}
+            {blogs && <BlogsList blogs={blogs}/>}
 
         </div>
      );
